@@ -12,7 +12,6 @@ def solution(s, l, n):
 		s.append(max(s[i-2] + l[i], s[i-3] + l[i] + l[i-1], s[i-1]))
 	return s[n-1]
 
-
 if __name__ == "__main__":
 	n = int(input())
 	lst = []
