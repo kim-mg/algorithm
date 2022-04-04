@@ -1,16 +1,16 @@
 import sys
 input = sys.stdin.readline
 
-def hanoi(n, f, t, s):
-    if n == 1:
-        print(f, t)
-        return
+# def hanoi(n, f, t, s):
+#     if n == 1:
+#         print(f, t)
+#         return
 
-    hanoi(n-1, f, s, t)
-    print(f, t)
-    hanoi(n-1, s, t, f)
+#     hanoi(n-1, f, s, t)
+#     print(f, t)
+#     hanoi(n-1, s, t, f)
 
-n = int(input())
+# n = int(input())
 
 # print(2**n - 1)
 # hanoi(n, 1, 3, 2)
@@ -18,6 +18,7 @@ n = int(input())
 ######################################################
 # best - use cache
 
+n = int(input())
 cache = {}
 def hanoi_cache(n, f, t):
     if n == 1:
@@ -32,3 +33,4 @@ def hanoi_cache(n, f, t):
 
 print(2**n - 1)
 print(hanoi_cache(n, 1, 3))
+print(cache)

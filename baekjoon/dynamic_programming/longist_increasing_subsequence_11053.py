@@ -1,9 +1,9 @@
 import sys
 input = sys.stdin.readline
 
+# LIS(Longest Increasing Subsequence)
 # ==================================================
 # DP
-# LIS(Longest Increasing Subsequence)
 def solution(l, n):
 	s = [1] * n
 	for i in range(1, n):
