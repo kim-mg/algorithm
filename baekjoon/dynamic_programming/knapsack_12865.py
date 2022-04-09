@@ -12,6 +12,9 @@ def solution(l, n, w):
 				dp[i][j] = value + dp[i-1][j-weight]
 	return dp[n][w]
 
+# ========================================================
+# best time
+
 def solution2(l, n, k):
 	kk = k+1
 	bag = {}
