@@ -15,18 +15,16 @@ def solution(l, n, w):
 # ========================================================
 # best time
 
-def solution2(l, n, k):
+def solution2(l, k):
 	kk = k+1
 	bag = {}
 	bag[0]=0
 	l.sort(reverse=True)
 	for w, v in l:
 		tmp = {}
-		print(w, v)
 		for vv, ww in bag.items():
 			if bag.get(vvv:=vv+v,kk) > (www:=w+ww):
 				tmp[vvv]=www
-			print(vv, ww, tmp)
 		bag.update(tmp)
 	return max(bag.keys())
 
@@ -35,4 +33,4 @@ if __name__ == "__main__":
 	lst = []
 	for _ in range(n):
 		lst.append(list(map(int, input().split())))
-	print(solution2(lst, n, w))
+	print(solution2(lst, w))
