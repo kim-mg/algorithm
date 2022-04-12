@@ -1,2 +1,4 @@
-s = "+\n" * 10
-print(s)
+l = [[0, 3], [1, 2]]
+
+for i, v in l:
+    print(i, v)
