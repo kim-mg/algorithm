@@ -6,7 +6,6 @@ def count_num(n, std):
 	while n > 0:
 		n = n // std
 		c += n
-		print(str(std)+"/"+str(n), ":", c)
 	return c
 
 def solution(n, m):

@@ -1,4 +1,2 @@
-l = [[0, 3], [1, 2]]
-
-for i, v in l:
-    print(i, v)
+for i in range(3, 1, -1):
+    print(i)
