@@ -1,2 +1,2 @@
-for i in range(3, 1, -1):
-    print(i)
+g = {1: [1, [0, 1]]}
+print(g[1])
