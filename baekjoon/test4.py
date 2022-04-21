@@ -1,2 +1,6 @@
-t = lambda a, b, c: list(map(sum, zip(a, b, c)))
-print(t([3, 3, 3, 3], [1, 2, 3, 4]))
+if __name__ == "__main__":
+	s = input().split()
+	if len(s) == 1:
+		print("split and size 1", s)
+	else:
+		print("split and size more than 1", s)
