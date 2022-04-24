@@ -1,6 +1,5 @@
-if __name__ == "__main__":
-	s = input().split()
-	if len(s) == 1:
-		print("split and size 1", s)
-	else:
-		print("split and size more than 1", s)
+from collections import deque
+
+d = deque([5])
+n = d.popleft()
+print(n)
