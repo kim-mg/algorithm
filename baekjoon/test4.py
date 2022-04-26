@@ -1,5 +1,4 @@
-from collections import deque
+s = "1\n2\n"
 
-d = deque([5])
-n = d.popleft()
-print(n)
+print(s)
+# print(s.rstrip("\n"))
