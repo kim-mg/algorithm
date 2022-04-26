@@ -23,15 +23,14 @@ def solution():
 
 # ============================================================
 # best time
-
 def main():
-    n = int(input())
-    l = input().strip().split(' ')
-    m = int(input())
-
-	s = list(set(l))
+    a = int(input())
+    n = input().strip().split(' ')
+    b = int(input())
+    
+    s = set(n)
     r = ''
-    for k in list(input().strip().split(' ')):
+    for k in input().strip().split(' '):
         r += '1\n' if k in s else '0\n'
     print(r)
 
