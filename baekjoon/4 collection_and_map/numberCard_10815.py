@@ -16,7 +16,5 @@ def solution():
 	# print(' '.join("1" if x in a else "0" for x in b))
 	print(' '.join(ans))
 
-	print("1" if x in a else "0" for x in b)
-
 if __name__ == "__main__":
 	solution()
