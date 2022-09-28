@@ -50,18 +50,24 @@ def getlcp(s):
 	k = 0
 	lcp = [0 for _ in range(n)]
 	inv_sfxarr = [0 for _ in range(n)]
+	# s 에 대해 sfxarr 에서의 순서를 입력한다.
 	for i in range(n):
 		inv_sfxarr[sfxarr[i]] = i
+	# s 의 i 순의 접미사 a 로부터 sfxarr 에서 a-1 접미사와의 lcp를 구하면
+	# s 의 i+1 순의 접미사 b 는 최소 lcp(a-1, a) - 1 <= lcp(b-1, b)가 된다.
 	for i in range(n):
 		if inv_sfxarr[i]:
+			# inv_arr 에 저장해둔 sfxarr의 순서로 본인 앞 접미사를 구해와 비교할 수 있다.
 			j = sfxarr[inv_sfxarr[i] - 1]
+			# 같은 글자 수 k 만큼 lcp 값을 구하고 lcp 배열에 입력한다.
 			while (j + k < n and i + k < n) and s[j + k] == s[i + k]:
 				k += 1
 			lcp[inv_sfxarr[i]] = k
-			print(s, i, j, k, inv_sfxarr, inv_sfxarr[i], sfxarr, sfxarr[j])
+			# print(s, i, j, k, inv_sfxarr, inv_sfxarr[i], sfxarr, sfxarr[j])
+			# s 의 i+1 접미사의 최소 lcp 이므로 -1을 연산한다.
 			if k > 0:
 				k -= 1
-	print(lcp, sfxarr, inv_sfxarr)
+	# print(lcp, sfxarr, inv_sfxarr)
 	return lcp
 
 def best():
