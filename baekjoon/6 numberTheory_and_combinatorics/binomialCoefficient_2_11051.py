@@ -18,11 +18,11 @@ def solution(n, k):
 # best time part_1
 def solution2(n, k):
 	sto = [[1 for _ in range(k+1)] for _ in range(n+1)]
-
+	print(sto)
 	for i in range(1, k+1):
 		for j in range(i+1, n+1):
 			sto[j][i] = (sto[j-1][i-1] + sto[j-1][i]) % 10007
-	
+	print(sto)
 	print(sto[n][k])
 
 # ====================================================
