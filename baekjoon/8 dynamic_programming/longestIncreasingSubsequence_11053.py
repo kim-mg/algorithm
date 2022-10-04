@@ -10,7 +10,7 @@ def solution(l, n):
 		for j in range(i):
 			if l[i] > l[j]:
 				s[i] = max(s[i], s[j]+1)
-
+	print(s)
 	return max(s)
 
 # ==================================================
@@ -24,7 +24,7 @@ def bs(l, r, x, s):
 			l = m + 1
 	return l
 
-def solution_2(l, n):
+def solution2(l, n):
 	s = [l[0]]
 	s_len = 1
 	for i in range(1, n):
@@ -34,9 +34,14 @@ def solution_2(l, n):
 		else:
 			idx = bs(0, s_len-1, l[i], s)
 			s[idx] = l[i]
+		print(s)
 	return s_len
+
+import time
 
 if __name__ == "__main__":
 	n = int(input())
 	lst = list(map(int, input().split()))
-	print(solution_2(lst, n))
+	s = time.time()
+	print(solution(lst, n))
+	print(int((time.time() - s) * 1000), "ms")

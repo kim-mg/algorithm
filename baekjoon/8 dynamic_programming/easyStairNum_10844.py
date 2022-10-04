@@ -13,7 +13,6 @@ def solution(l, n):
 				l[i][j] = l[i-1][j-1] + l[i-1][j+1]
 	return sum(l[-1])
 
-
 if __name__ == "__main__":
 	n = int(input())
 	sto = [[0] + [1] * 9]

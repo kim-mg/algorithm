@@ -7,16 +7,17 @@ def solution(s1, s2):
 	dp = [[0] * (m+1) for _ in range(n+1)]
 
 	for i in range(1, n+1):
-		for j in range(1, m+1):
+		for j in range(i, m+1):
 			if s1[i-1] == s2[j-1]:
 				dp[i][j] = dp[i-1][j-1] + 1
 			else:
 				dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+	print(dp)
 	return dp[n][m]
 
 # ====================================================
 # best time
-def solution_2(s1, s2):
+def solution2(s1, s2):
 	d=[0]*300;r=0;z=0;c=0
 	for i in range(len(s1)):d[ord(s1[i])]+=(2**i)
 	for i in range(len(s1)):
@@ -30,4 +31,4 @@ def solution_2(s1, s2):
 if __name__ == "__main__":
 	s1 = input().strip()
 	s2 = input().strip()
-	print(solution_2(s1, s2))
+	print(solution(s1, s2))
