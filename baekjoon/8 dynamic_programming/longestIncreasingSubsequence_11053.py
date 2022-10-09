@@ -10,7 +10,6 @@ def solution(l, n):
 		for j in range(i):
 			if l[i] > l[j]:
 				s[i] = max(s[i], s[j]+1)
-	print(s)
 	return max(s)
 
 # ==================================================
@@ -43,5 +42,5 @@ if __name__ == "__main__":
 	n = int(input())
 	lst = list(map(int, input().split()))
 	s = time.time()
-	print(solution(lst, n))
+	print(solution2(lst, n))
 	print(int((time.time() - s) * 1000), "ms")
