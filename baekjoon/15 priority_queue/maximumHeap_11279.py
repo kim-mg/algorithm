@@ -20,7 +20,7 @@ def solution():
 				pp = l[0] // 2
 				while p <= pp:
 					ta = [p, p*2, min(l[0], p*2 + 1)]
-					ta.sort(key=lambda x : (abs(l[x]), l[x]))
+					ta.sort(reverse=True, key=lambda x : l[x])
 					c = ta[0]
 					if c != p:
 						t = l[c]
@@ -34,7 +34,7 @@ def solution():
 			l[0] += 1
 			c = l[0]
 			p = c // 2
-			while p > 0 and (abs(l[c]) < abs(l[p]) or (abs(l[c]) == abs(l[p]) and l[c] < l[p])):
+			while p > 0 and l[c] > l[p]:
 				t = l[c]
 				l[c] = l[p]
 				l[p] = t
@@ -52,13 +52,12 @@ def solution2():
 	a = []
 	for _ in range(n):
 		num = int(input())
-		t = (abs(num), num)
 		if num:
-			heapq.heappush(q, t)
+			heapq.heappush(q, -num)
 		else:
-			a.append(str(heapq.heappop(q)[-1]) if q else '0')
+			a.append(str(-heapq.heappop(q)) if q else '0')
 	print('\n'.join(a))
 
 if __name__ == "__main__":
-	solution()
-	# solution2()
+	# solution()
+	solution2()
