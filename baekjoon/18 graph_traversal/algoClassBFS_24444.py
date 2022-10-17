@@ -11,7 +11,7 @@ def solution():
 		graph[u].append(v)
 		graph[v].append(u)
 	for i in range(1, n+1):
-		graph[i].sort(reverse=True)
+		graph[i].sort()
 	q = deque([r])
 	visit[r] = 1
 	order = 2

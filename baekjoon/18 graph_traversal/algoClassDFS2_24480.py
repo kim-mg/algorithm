@@ -26,11 +26,11 @@ def solution():
 		graph[u].append(v)
 		graph[v].append(u)
 	for i in range(n):
-		graph[i].sort()
+		graph[i].sort(reverse=True)
 	dfs(r - 1)
 	print('\n'.join(map(str, p)))
 
-###############################################################
+############################################################3
 # stack
 
 def solution2():
@@ -42,7 +42,7 @@ def solution2():
 		graph[u].append(v)
 		graph[v].append(u)
 	for g in graph[1:]:
-		g.sort(reverse=True)
+		g.sort()
 
 	order = 1
 	stack = [r]
